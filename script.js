@@ -1,5 +1,6 @@
 // Atualiza barra de progresso conforme checkboxes
 function updateProgress() {
+p
   const rows = document.querySelectorAll('tbody tr');
   let totalHours = 0;
   let completedHours = 0;
@@ -20,6 +21,7 @@ function updateProgress() {
   if (text) {
     text.textContent = percent.toFixed(1) + '%';
   }
+
 }
 
 document.addEventListener('DOMContentLoaded', () => {
