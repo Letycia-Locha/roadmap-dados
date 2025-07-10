@@ -12,6 +12,19 @@ body {
   background-color: #000;
 }
 
+.progress-bar {
+  width: 100%;
+  background: #000;
+  height: 20px;
+  margin: 1rem 0;
+}
+
+.progress {
+  background: #bd3692;
+  height: 100%;
+  width: 0;
+}
+
 header {
   text-align: center;
   padding: 2rem 1rem;
