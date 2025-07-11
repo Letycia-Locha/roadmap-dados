@@ -40,6 +40,45 @@ header .subtitle {
   margin: 1rem 0;
 }
 
+#auth {
+  margin: 1rem auto;
+  max-width: 320px;
+  background-color: #111;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  text-align: center;
+}
+
+#auth p {
+  margin-bottom: 0.75rem;
+  color: #FFB5E8;
+}
+
+#auth form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+#auth input,
+#auth button {
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid #444;
+}
+
+#auth button {
+  background-color: #bd3692;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+#logout-btn {
+  margin-top: 0.5rem;
+}
+
 #progress-bar {
   height: 20px;
   width: 0%;
