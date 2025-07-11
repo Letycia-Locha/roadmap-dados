@@ -40,6 +40,19 @@ header .subtitle {
   margin: 1rem 0;
 }
 
+#auth {
+  margin: 1rem 0;
+}
+
+#auth form {
+  display: inline-flex;
+  gap: 0.5rem;
+}
+
+#auth input {
+  padding: 0.25rem;
+}
+
 #progress-bar {
   height: 20px;
   width: 0%;
