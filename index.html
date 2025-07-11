@@ -12,6 +12,14 @@
     <p class="subtitle">Pronta para iniciar sua jornada de estudos?</p>
     <div id="progress-container">
       <div id="progress-bar"><span id="progress-text">0%</span></div>
+</div>
+    <div id="auth">
+      <form id="login-form">
+        <input type="email" id="login-email" placeholder="Email" required>
+        <input type="password" id="login-password" placeholder="Senha" required>
+        <button type="submit">Entrar</button>
+      </form>
+      <button id="logout-btn" style="display:none;">Sair</button>
     </div>
     <nav>
       <ul class="menu">
@@ -39,12 +47,12 @@
           </tr>
         </thead>
         <tbody>
-          <tr><td><input type="checkbox"></td><td>Cálculo I</td><td>Entender fundamentos de limites, derivadas e integrais.</td><td><a href="https://pt.khanacademy.org/math/calculus-1" target="_blank">Acessar curso</a></td></tr>
-          <tr><td><input type="checkbox"></td><td>Álgebra Linear</td><td>Aprender vetores, matrizes e transformações lineares.</td><td><a href="https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/" target="_blank">Acessar curso</a></td></tr>
-          <tr><td><input type="checkbox"></td><td>Probabilidade Avançada</td><td>Explorar distribuições, variáveis aleatórias e teoremas centrais.</td><td><a href="https://pt.khanacademy.org/math/statistics-probability/probability-library" target="_blank">Acessar curso</a></td></tr>
-          <tr><td><input type="checkbox"></td><td>Estatística I</td><td>Entender fundamentos de estatística descritiva e probabilística.</td><td><a href="https://www.escolavirtual.gov.br/curso/1211" target="_blank">Acessar curso</a></td></tr>
-          <tr><td><input type="checkbox"></td><td>Governança de Dados</td><td>Conhecer práticas de governança e qualidade de dados.</td><td><a href="https://www.escolavirtual.gov.br/curso/270" target="_blank">Acessar curso</a></td></tr>
-          <tr><td><input type="checkbox"></td><td>Conceitos e Ferramentas</td><td>Visão geral das principais ferramentas e conceitos em ciência de dados.</td><td><a href="https://www.escolavirtual.gov.br/curso/976" target="_blank">Acessar curso</a></td></tr>
+          <tr><td><input type="checkbox" data-id="1"></td><td>Cálculo I</td><td>Entender fundamentos de limites, derivadas e integrais.</td><td><a href="https://pt.khanacademy.org/math/calculus-1" target="_blank">Acessar curso</a></td></tr>
+          <tr><td><input type="checkbox" data-id="2"></td><td>Álgebra Linear</td><td>Aprender vetores, matrizes e transformações lineares.</td><td><a href="https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/" target="_blank">Acessar curso</a></td></tr>
+          <tr><td><input type="checkbox" data-id="3"></td><td>Probabilidade Avançada</td><td>Explorar distribuições, variáveis aleatórias e teoremas centrais.</td><td><a href="https://pt.khanacademy.org/math/statistics-probability/probability-library" target="_blank">Acessar curso</a></td></tr>
+          <tr><td><input type="checkbox" data-id="4"></td><td>Estatística I</td><td>Entender fundamentos de estatística descritiva e probabilística.</td><td><a href="https://www.escolavirtual.gov.br/curso/1211" target="_blank">Acessar curso</a></td></tr>
+          <tr><td><input type="checkbox" data-id="5"></td><td>Governança de Dados</td><td>Conhecer práticas de governança e qualidade de dados.</td><td><a href="https://www.escolavirtual.gov.br/curso/270" target="_blank">Acessar curso</a></td></tr>
+          <tr><td><input type="checkbox" data-id="6"></td><td>Conceitos e Ferramentas</td><td>Visão geral das principais ferramentas e conceitos em ciência de dados.</td><td><a href="https://www.escolavirtual.gov.br/curso/976" target="_blank">Acessar curso</a></td></tr>
         </tbody>
       </table>
     </section>
@@ -60,12 +68,12 @@
           </tr>
         </thead>
         <tbody>
-          <tr><td><input type="checkbox"></td><td>Python</td><td>Familiarizar-se com sintaxe, estruturas de dados e bibliotecas básicas.</td><td><a href="https://on.fiap.com.br/" target="_blank">Acessar curso</a></td></tr>
-          <tr><td><input type="checkbox"></td><td>Learning with Python</td><td>Praticar conceitos avançados de Python aplicados à ciência de dados.</td><td><a href="https://www.escolavirtual.gov.br/curso/338" target="_blank">Acessar curso</a></td></tr>
-          <tr><td><input type="checkbox"></td><td>SQL</td><td>Aprender comandos fundamentais de SQL para consulta e manipulação de dados.</td><td><a href="https://www.datacamp.com/pt/courses/introduction-to-sql" target="_blank">Acessar curso</a></td></tr>
-          <tr><td><input type="checkbox"></td><td>SQL II</td><td>Aprofundar modelagem e implementação de bancos relacionais.</td><td><a href="https://www.ev.org.br/cursos/implementando-banco-de-dados" target="_blank">Acessar curso</a></td></tr>
-          <tr><td><input type="checkbox"></td><td>SQL III</td><td>Consolidar conceitos de SQL avançado e otimização de consultas.</td><td><a href="https://app.datacamp.com/learn/skill-tracks/sql-fundamentals" target="_blank">Acessar curso</a></td></tr>
-          <tr><td><input type="checkbox"></td><td>SQL Avançado</td><td>Estudar tuning, índices e análise de performance em SQL.</td><td><a href="https://app.datacamp.com/learn/skill-tracks/sql-fundamentals" target="_blank">Acessar curso</a></td></tr>
+          <tr><td><input type="checkbox" data-id="7"></td><td>Python</td><td>Familiarizar-se com sintaxe, estruturas de dados e bibliotecas básicas.</td><td><a href="https://on.fiap.com.br/" target="_blank">Acessar curso</a></td></tr>
+          <tr><td><input type="checkbox" data-id="8"></td><td>Learning with Python</td><td>Praticar conceitos avançados de Python aplicados à ciência de dados.</td><td><a href="https://www.escolavirtual.gov.br/curso/338" target="_blank">Acessar curso</a></td></tr>
+          <tr><td><input type="checkbox" data-id="9"></td><td>SQL</td><td>Aprender comandos fundamentais de SQL para consulta e manipulação de dados.</td><td><a href="https://www.datacamp.com/pt/courses/introduction-to-sql" target="_blank">Acessar curso</a></td></tr>
+          <tr><td><input type="checkbox" data-id="10"></td><td>SQL II</td><td>Aprofundar modelagem e implementação de bancos relacionais.</td><td><a href="https://www.ev.org.br/cursos/implementando-banco-de-dados" target="_blank">Acessar curso</a></td></tr>
+          <tr><td><input type="checkbox" data-id="11"></td><td>SQL III</td><td>Consolidar conceitos de SQL avançado e otimização de consultas.</td><td><a href="https://app.datacamp.com/learn/skill-tracks/sql-fundamentals" target="_blank">Acessar curso</a></td></tr>
+          <tr><td><input type="checkbox" data-id="12"></td><td>SQL Avançado</td><td>Estudar tuning, índices e análise de performance em SQL.</td><td><a href="https://app.datacamp.com/learn/skill-tracks/sql-fundamentals" target="_blank">Acessar curso</a></td></tr>
         </tbody>
       </table>
     </section>
@@ -81,14 +89,14 @@
           </tr>
         </thead>
         <tbody>
-          <tr><td><input type="checkbox"></td><td>Data Analyst Track</td><td>Aprender análise de dados em Python ponta a ponta.</td><td><a href="https://app.datacamp.com/learn/career-tracks/data-analyst-with-python" target="_blank">Acessar curso</a></td></tr>
-          <tr><td><input type="checkbox"></td><td>Fundamentos da Ciência de Dados</td><td>Entender ciclo de vida e processos de projetos de dados.</td><td><a href="https://www.fm2s.com.br/cursos/fundamentos-da-ciencia-de-dados" target="_blank">Acessar curso</a></td></tr>
-          <tr><td><input type="checkbox"></td><td>Criação de Indicadores de Desempenho</td><td>Definir e calcular KPIs para projetos de dados.</td><td><a href="https://www.escolavirtual.gov.br/curso/801" target="_blank">Acessar curso</a></td></tr>
-          <tr><td><input type="checkbox"></td><td>Análise de Negócios</td><td>Aplicar lógica de negócios na interpretação de resultados.</td><td><a href="https://www.escolavirtual.gov.br/curso/1048" target="_blank">Acessar curso</a></td></tr>
-          <tr><td><input type="checkbox"></td><td>Análise de dados: leitura crítica</td><td>Desenvolver pensamento crítico na interpretação de relatórios.</td><td><a href="https://www.escolavirtual.gov.br/curso/764" target="_blank">Acessar curso</a></td></tr>
-          <tr><td><input type="checkbox"></td><td>Pandas</td><td>Praticar manipulação e limpeza de dados com pandas.</td><td><a href="https://app.datacamp.com/learn/courses/data-manipulation-with-pandas" target="_blank">Acessar curso</a></td></tr>
-          <tr><td><input type="checkbox"></td><td>Matplotlib</td><td>Aprender a criar visualizações estáticas em Python.</td><td><a href="https://app.datacamp.com/learn/courses/introduction-to-data-visualization-with-matplotlib" target="_blank">Acessar curso</a></td></tr>
-          <tr><td><input type="checkbox"></td><td>Seaborn</td><td>Explorar visualizações estatísticas avançadas com seaborn.</td><td><a href="https://app.datacamp.com/learn/courses/introduction-to-data-visualization-with-seaborn" target="_blank">Acessar curso</a></td></tr>
+          <tr><td><input type="checkbox" data-id="13"></td><td>Data Analyst Track</td><td>Aprender análise de dados em Python ponta a ponta.</td><td><a href="https://app.datacamp.com/learn/career-tracks/data-analyst-with-python" target="_blank">Acessar curso</a></td></tr>
+          <tr><td><input type="checkbox" data-id="14"></td><td>Fundamentos da Ciência de Dados</td><td>Entender ciclo de vida e processos de projetos de dados.</td><td><a href="https://www.fm2s.com.br/cursos/fundamentos-da-ciencia-de-dados" target="_blank">Acessar curso</a></td></tr>
+          <tr><td><input type="checkbox" data-id="15"></td><td>Criação de Indicadores de Desempenho</td><td>Definir e calcular KPIs para projetos de dados.</td><td><a href="https://www.escolavirtual.gov.br/curso/801" target="_blank">Acessar curso</a></td></tr>
+          <tr><td><input type="checkbox" data-id="16"></td><td>Análise de Negócios</td><td>Aplicar lógica de negócios na interpretação de resultados.</td><td><a href="https://www.escolavirtual.gov.br/curso/1048" target="_blank">Acessar curso</a></td></tr>
+          <tr><td><input type="checkbox" data-id="17"></td><td>Análise de dados: leitura crítica</td><td>Desenvolver pensamento crítico na interpretação de relatórios.</td><td><a href="https://www.escolavirtual.gov.br/curso/764" target="_blank">Acessar curso</a></td></tr>
+          <tr><td><input type="checkbox" data-id="18"></td><td>Pandas</td><td>Praticar manipulação e limpeza de dados com pandas.</td><td><a href="https://app.datacamp.com/learn/courses/data-manipulation-with-pandas" target="_blank">Acessar curso</a></td></tr>
+          <tr><td><input type="checkbox" data-id="19"></td><td>Matplotlib</td><td>Aprender a criar visualizações estáticas em Python.</td><td><a href="https://app.datacamp.com/learn/courses/introduction-to-data-visualization-with-matplotlib" target="_blank">Acessar curso</a></td></tr>
+          <tr><td><input type="checkbox" data-id="20"></td><td>Seaborn</td><td>Explorar visualizações estatísticas avançadas com seaborn.</td><td><a href="https://app.datacamp.com/learn/courses/introduction-to-data-visualization-with-seaborn" target="_blank">Acessar curso</a></td></tr>
         </tbody>
       </table>
     </section>
@@ -104,12 +112,12 @@
           </tr>
         </thead>
         <tbody>
-          <tr><td><input type="checkbox"></td><td>Tópicos em ML</td><td>Explorar algoritmos clássicos de ML e seus fundamentos.</td><td><a href="https://educacao-executiva.fgv.br/cursos/online/curta-media-duracao-online/topicos-em-machine-learning" target="_blank">Acessar curso</a></td></tr>
-          <tr><td><input type="checkbox"></td><td>Conceitos em ML</td><td>Compreender bases teóricas de ML, bias-variance e overfitting.</td><td><a href="https://blog.dsacademy.com.br/conceitos-fundamentais-de-machine-learning-parte-1/" target="_blank">Acessar material</a></td></tr>
-          <tr><td><input type="checkbox"></td><td>Modelos de Classificação</td><td>Explorar técnicas de classificação supervisionada.</td><td><a href="https://www.escolavirtual.gov.br/curso/1165" target="_blank">Acessar curso</a></td></tr>
-          <tr><td><input type="checkbox"></td><td>Modelos de Regressão</td><td>Aprender métodos de regressão linear e múltipla para predições.</td><td><a href="https://www.escolavirtual.gov.br/curso/1173" target="_blank">Acessar curso</a></td></tr>
-          <tr><td><input type="checkbox"></td><td>Conjuntos Frequentes</td><td>Estudar mineração de regras de associação para padrões em dados.</td><td><a href="https://www.escolavirtual.gov.br/curso/1166" target="_blank">Acessar curso</a></td></tr>
-          <tr><td><input type="checkbox"></td><td>Modelos de Agrupamento</td><td>Entender clustering como K-means e hierárquico para segmentação.</td><td><a href="https://www.escolavirtual.gov.br/curso/1174" target="_blank">Acessar curso</a></td></tr>
+          <tr><td><input type="checkbox" data-id="21"></td><td>Tópicos em ML</td><td>Explorar algoritmos clássicos de ML e seus fundamentos.</td><td><a href="https://educacao-executiva.fgv.br/cursos/online/curta-media-duracao-online/topicos-em-machine-learning" target="_blank">Acessar curso</a></td></tr>
+          <tr><td><input type="checkbox" data-id="22"></td><td>Conceitos em ML</td><td>Compreender bases teóricas de ML, bias-variance e overfitting.</td><td><a href="https://blog.dsacademy.com.br/conceitos-fundamentais-de-machine-learning-parte-1/" target="_blank">Acessar material</a></td></tr>
+          <tr><td><input type="checkbox" data-id="23"></td><td>Modelos de Classificação</td><td>Explorar técnicas de classificação supervisionada.</td><td><a href="https://www.escolavirtual.gov.br/curso/1165" target="_blank">Acessar curso</a></td></tr>
+          <tr><td><input type="checkbox" data-id="24"></td><td>Modelos de Regressão</td><td>Aprender métodos de regressão linear e múltipla para predições.</td><td><a href="https://www.escolavirtual.gov.br/curso/1173" target="_blank">Acessar curso</a></td></tr>
+          <tr><td><input type="checkbox" data-id="25"></td><td>Conjuntos Frequentes</td><td>Estudar mineração de regras de associação para padrões em dados.</td><td><a href="https://www.escolavirtual.gov.br/curso/1166" target="_blank">Acessar curso</a></td></tr>
+          <tr><td><input type="checkbox" data-id="26"></td><td>Modelos de Agrupamento</td><td>Entender clustering como K-means e hierárquico para segmentação.</td><td><a href="https://www.escolavirtual.gov.br/curso/1174" target="_blank">Acessar curso</a></td></tr>
         </tbody>
       </table>
     </section>
@@ -125,10 +133,10 @@
           </tr>
         </thead>
         <tbody>
-          <tr><td><input type="checkbox"></td><td>Deep Learning</td><td>Visão geral de redes neurais profundas e aplicações em visão e NLP.</td><td><a href="https://www.ibm.com/think/topics/deep-learning" target="_blank">Acessar material</a></td></tr>
-          <tr><td><input type="checkbox"></td><td>TensorFlow</td><td>Introdução ao TensorFlow para criação e treino de modelos de deep learning.</td><td><a href="https://www.tensorflow.org/?hl=pt-br" target="_blank">Acessar site</a></td></tr>
-          <tr><td><input type="checkbox"></td><td>TensorFlow II</td><td>Aprofundar recursos avançados e pipelines de ML com TensorFlow.</td><td><a href="https://www.tensorflow.org/resources/learn-ml?hl=pt-br" target="_blank">Acessar site</a></td></tr>
-          <tr><td><input type="checkbox"></td><td>Redes Complexas</td><td>Estudar aplicação de grafos e redes complexas em ciência de dados.</td><td><a href="https://www.escolavirtual.gov.br/curso/1258" target="_blank">Acessar curso</a></td></tr>
+          <tr><td><input type="checkbox" data-id="27"></td><td>Deep Learning</td><td>Visão geral de redes neurais profundas e aplicações em visão e NLP.</td><td><a href="https://www.ibm.com/think/topics/deep-learning" target="_blank">Acessar material</a></td></tr>
+          <tr><td><input type="checkbox" data-id="28"></td><td>TensorFlow</td><td>Introdução ao TensorFlow para criação e treino de modelos de deep learning.</td><td><a href="https://www.tensorflow.org/?hl=pt-br" target="_blank">Acessar site</a></td></tr>
+          <tr><td><input type="checkbox" data-id="29"></td><td>TensorFlow II</td><td>Aprofundar recursos avançados e pipelines de ML com TensorFlow.</td><td><a href="https://www.tensorflow.org/resources/learn-ml?hl=pt-br" target="_blank">Acessar site</a></td></tr>
+          <tr><td><input type="checkbox" data-id="30"></td><td>Redes Complexas</td><td>Estudar aplicação de grafos e redes complexas em ciência de dados.</td><td><a href="https://www.escolavirtual.gov.br/curso/1258" target="_blank">Acessar curso</a></td></tr>
         </tbody>
       </table>
     </section>
@@ -144,12 +152,12 @@
           </tr>
         </thead>
         <tbody>
-          <tr><td><input type="checkbox"></td><td>Big Data Analytics</td><td>Entender conceitos e casos de uso de Big Data Analytics em empresas.</td><td><a href="https://www.ibm.com/think/topics/big-data-analytics" target="_blank">Acessar material</a></td></tr>
-          <tr><td><input type="checkbox"></td><td>Apache Spark</td><td>Conhecer arquitetura do Spark e processamento distribuído de dados.</td><td><a href="https://spark.apache.org/" target="_blank">Acessar site</a></td></tr>
-          <tr><td><input type="checkbox"></td><td>Formação Spark com PySpark</td><td>Praticar processamento distribuído usando Spark e PySpark.</td><td><a href="https://www.eia.ai/formacao-spark-com-pyspark-o-curso-completo" target="_blank">Acessar curso</a></td></tr>
-          <tr><td><input type="checkbox"></td><td>Introdução à Engenharia de Dados com Airflow</td><td>Aprender a orquestrar pipelines de dados reproducíveis com Airflow.</td><td><a href="https://www.youtube.com/playlist?list=PLy7nrYWoggjze1Z4RZsC7fpU7DXmqoqNp" target="_blank">Acessar playlist</a></td></tr>
-          <tr><td><input type="checkbox"></td><td>Modelagem de Data Warehouse</td><td>Entender conceitos de Data Warehousing e star schema.</td><td><a href="https://www.youtube.com/watch?v=7qbF8_d9B1U" target="_blank">Acessar vídeo</a></td></tr>
-          <tr><td><input type="checkbox"></td><td>NoSQL Basics</td><td>Conhecer bancos NoSQL e seus casos de uso.</td><td><a href="https://university.mongodb.com/courses/M001/about" target="_blank">Acessar curso</a></td></tr>
+          <tr><td><input type="checkbox" data-id="31"></td><td>Big Data Analytics</td><td>Entender conceitos e casos de uso de Big Data Analytics em empresas.</td><td><a href="https://www.ibm.com/think/topics/big-data-analytics" target="_blank">Acessar material</a></td></tr>
+          <tr><td><input type="checkbox" data-id="32"></td><td>Apache Spark</td><td>Conhecer arquitetura do Spark e processamento distribuído de dados.</td><td><a href="https://spark.apache.org/" target="_blank">Acessar site</a></td></tr>
+          <tr><td><input type="checkbox" data-id="33"></td><td>Formação Spark com PySpark</td><td>Praticar processamento distribuído usando Spark e PySpark.</td><td><a href="https://www.eia.ai/formacao-spark-com-pyspark-o-curso-completo" target="_blank">Acessar curso</a></td></tr>
+          <tr><td><input type="checkbox" data-id="34"></td><td>Introdução à Engenharia de Dados com Airflow</td><td>Aprender a orquestrar pipelines de dados reproducíveis com Airflow.</td><td><a href="https://www.youtube.com/playlist?list=PLy7nrYWoggjze1Z4RZsC7fpU7DXmqoqNp" target="_blank">Acessar playlist</a></td></tr>
+          <tr><td><input type="checkbox" data-id="35"></td><td>Modelagem de Data Warehouse</td><td>Entender conceitos de Data Warehousing e star schema.</td><td><a href="https://www.youtube.com/watch?v=7qbF8_d9B1U" target="_blank">Acessar vídeo</a></td></tr>
+          <tr><td><input type="checkbox" data-id="36"></td><td>NoSQL Basics</td><td>Conhecer bancos NoSQL e seus casos de uso.</td><td><a href="https://university.mongodb.com/courses/M001/about" target="_blank">Acessar curso</a></td></tr>
         </tbody>
       </table>
     </section>
@@ -165,11 +173,11 @@
           </tr>
         </thead>
         <tbody>
-          <tr><td><input type="checkbox"></td><td>Docker Getting Started</td><td>Aprender containerização básica para empacotar e rodar aplicações.</td><td><a href="https://docs.docker.com/get-started/" target="_blank">Acessar docs</a></td></tr>
-          <tr><td><input type="checkbox"></td><td>MLflow Tutorial</td><td>Entender versionamento e tracking de modelos de ML.</td><td><a href="https://mlflow.org/docs/latest/tutorial/index.html" target="_blank">Acessar docs</a></td></tr>
-          <tr><td><input type="checkbox"></td><td>Google Colab Hands-on</td><td>Praticar notebooks em nuvem e uso de GPUs/TPUs gratuitamente.</td><td><a href="https://colab.research.google.com/notebooks/intro.ipynb" target="_blank">Acessar intro</a></td></tr>
-          <tr><td><input type="checkbox"></td><td>BigQuery Sandbox</td><td>Explorar consultas SQL em BigQuery sem custo.</td><td><a href="https://cloud.google.com/bigquery/docs/sandbox" target="_blank">Acessar docs</a></td></tr>
-          <tr><td><input type="checkbox"></td><td>Kubeflow Overview</td><td>Conhecer orquestração de pipelines de ML em Kubernetes.</td><td><a href="https://www.kubeflow.org/docs/started/" target="_blank">Acessar docs</a></td></tr>
+          <tr><td><input type="checkbox" data-id="37"></td><td>Docker Getting Started</td><td>Aprender containerização básica para empacotar e rodar aplicações.</td><td><a href="https://docs.docker.com/get-started/" target="_blank">Acessar docs</a></td></tr>
+          <tr><td><input type="checkbox" data-id="38"></td><td>MLflow Tutorial</td><td>Entender versionamento e tracking de modelos de ML.</td><td><a href="https://mlflow.org/docs/latest/tutorial/index.html" target="_blank">Acessar docs</a></td></tr>
+          <tr><td><input type="checkbox" data-id="39"></td><td>Google Colab Hands-on</td><td>Praticar notebooks em nuvem e uso de GPUs/TPUs gratuitamente.</td><td><a href="https://colab.research.google.com/notebooks/intro.ipynb" target="_blank">Acessar intro</a></td></tr>
+          <tr><td><input type="checkbox" data-id="40"></td><td>BigQuery Sandbox</td><td>Explorar consultas SQL em BigQuery sem custo.</td><td><a href="https://cloud.google.com/bigquery/docs/sandbox" target="_blank">Acessar docs</a></td></tr>
+          <tr><td><input type="checkbox" data-id="41"></td><td>Kubeflow Overview</td><td>Conhecer orquestração de pipelines de ML em Kubernetes.</td><td><a href="https://www.kubeflow.org/docs/started/" target="_blank">Acessar docs</a></td></tr>
         </tbody>
       </table>
     </section>
@@ -185,8 +193,8 @@
           </tr>
         </thead>
         <tbody>
-          <tr><td><input type="checkbox"></td><td>Git e GitHub</td><td>Aprender versionamento de código e colaboração.</td><td><a href="https://www.youtube.com/watch?v=DqTITcMq68k" target="_blank">Acessar vídeo</a></td></tr>
-          <tr><td><input type="checkbox"></td><td>Criando um portfólio</td><td>Entender boas práticas para montar e apresentar portfólio profissional.</td><td><a href="https://www.youtube.com/watch?v=plNeRMK-xbA" target="_blank">Acessar vídeo</a></td></tr>
+          <tr><td><input type="checkbox" data-id="42"></td><td>Git e GitHub</td><td>Aprender versionamento de código e colaboração.</td><td><a href="https://www.youtube.com/watch?v=DqTITcMq68k" target="_blank">Acessar vídeo</a></td></tr>
+          <tr><td><input type="checkbox" data-id="43"></td><td>Criando um portfólio</td><td>Entender boas práticas para montar e apresentar portfólio profissional.</td><td><a href="https://www.youtube.com/watch?v=plNeRMK-xbA" target="_blank">Acessar vídeo</a></td></tr>
         </tbody>
       </table>
     </section>
@@ -196,6 +204,7 @@
     <p>Me siga nas redes sociais <strong>@pythonicah</strong></p>
     <p>&copy; 2025</p>
   </footer>
+  <script src="supabase.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
