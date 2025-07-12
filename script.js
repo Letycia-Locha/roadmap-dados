@@ -1,9 +1,7 @@
-const SUPABASE_URL = 'YOUR_SUPABASE_URL';
-const SUPABASE_KEY = 'YOUR_SUPABASE_ANON_KEY';
-const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+let elements;
 
-async function init() {
-  const elements = {
+function init() {
+  elements = {
     checkboxes: document.querySelectorAll('tbody input[type="checkbox"]'),
     progressBar: document.getElementById('progress-bar'),
     progressText: document.getElementById('progress-text'),
@@ -13,103 +11,84 @@ async function init() {
     userEmail: document.getElementById('user-email')
   };
 
-  elements.checkboxes.forEach((checkbox, idx) => {
-    if (!checkbox.dataset.id) checkbox.dataset.id = idx + 1;
-    checkbox.addEventListener('change', () => handleCheckboxChange(checkbox, elements));
+  elements.checkboxes.forEach((cb, idx) => {
+    if (!cb.dataset.id) cb.dataset.id = idx + 1;
+    cb.addEventListener('change', () => handleCheckboxChange(cb));
   });
 
-  elements.loginForm.addEventListener('submit', event => handleLogin(event));
+  elements.loginForm.addEventListener('submit', handleLogin);
   elements.logoutBtn.addEventListener('click', handleLogout);
-  supabaseClient.auth.onAuthStateChange((_evt, session) => onAuthChange(session, elements));
 
-  const { data: { session } } = await supabaseClient.auth.getSession();
-  onAuthChange(session, elements);
+  const savedUser = localStorage.getItem('loggedInUser');
+  onAuthChange(savedUser);
 }
 
-async function handleLogin(event) {
+function handleLogin(event) {
   event.preventDefault();
   const email = document.getElementById('login-email').value;
   const password = document.getElementById('login-password').value;
-  const { data, error } = await supabaseClient.auth.signInWithPassword({ email, password });
-  if (error) {
-    alert(error.message);
-  } else if (data.session) {
+  if (email && password) {
+    localStorage.setItem('loggedInUser', email);
     event.target.reset();
+    onAuthChange(email);
   }
 }
 
-async function handleLogout() {
-  await supabaseClient.auth.signOut();
+function handleLogout() {
+  localStorage.removeItem('loggedInUser');
+  onAuthChange(null);
 }
 
-function onAuthChange(session, el) {
-  if (session?.user) {
-    el.loginForm.style.display = 'none';
-    el.logoutBtn.style.display = 'block';
-    el.authMessage.style.display = 'none';
-    el.userEmail.textContent = `Bem-vindo, ${session.user.email}`;
-    el.userEmail.style.display = 'block';
-    loadProgress(session.user.id, el);
+function onAuthChange(userEmail) {
+  if (userEmail) {
+    elements.loginForm.style.display = 'none';
+    elements.logoutBtn.style.display = 'block';
+    elements.authMessage.style.display = 'none';
+    elements.userEmail.textContent = `Bem-vindo, ${userEmail}`;
+    elements.userEmail.style.display = 'block';
+    loadProgress(userEmail);
   } else {
-    el.loginForm.style.display = 'block';
-    el.logoutBtn.style.display = 'none';
-    el.userEmail.style.display = 'none';
-    el.authMessage.style.display = 'block';
-    clearCheckboxes(el.checkboxes);
-    updateProgressBar(el);
+    elements.loginForm.style.display = 'block';
+    elements.logoutBtn.style.display = 'none';
+    elements.userEmail.style.display = 'none';
+    elements.authMessage.style.display = 'block';
+    clearCheckboxes();
+    updateProgressBar();
   }
 }
 
-function clearCheckboxes(checkboxes) {
-  checkboxes.forEach(cb => { cb.checked = false; });
+function clearCheckboxes() {
+  elements.checkboxes.forEach(cb => { cb.checked = false; });
 }
 
-async function handleCheckboxChange(checkbox, el) {
-  await saveProgress(checkbox);
-  updateProgressBar(el);
+function handleCheckboxChange(checkbox) {
+  saveProgress(checkbox);
+  updateProgressBar();
 }
 
-async function updateProgressBar(el) {
-  const total = el.checkboxes.length;
-  const done = Array.from(el.checkboxes).filter(cb => cb.checked).length;
+function updateProgressBar() {
+  const total = elements.checkboxes.length;
+  const done = Array.from(elements.checkboxes).filter(cb => cb.checked).length;
   const percent = total ? (done / total) * 100 : 0;
-  el.progressBar.style.width = `${percent}%`;
-  el.progressText.textContent = `${Math.round(percent)}%`;
+  elements.progressBar.style.width = `${percent}%`;
+  elements.progressText.textContent = `${Math.round(percent)}%`;
 }
 
-async function loadProgress(userId, el) {
-  try {
-    const { data, error } = await supabaseClient
-      .from('progress')
-      .select('checkbox_id, checked')
-      .eq('user_id', userId);
-    if (error) throw error;
-    clearCheckboxes(el.checkboxes);
-    data.forEach(({ checkbox_id, checked }) => {
-      const cb = document.querySelector(`input[data-id="${checkbox_id}"]`);
-      if (cb) cb.checked = checked;
-    });
-  } catch (err) {
-    console.error('Falha ao carregar progresso', err);
-  }
-  updateProgressBar(el);
+function loadProgress(email) {
+  const data = JSON.parse(localStorage.getItem(`progress-${email}`) || '{}');
+  clearCheckboxes();
+  elements.checkboxes.forEach(cb => {
+    if (data[cb.dataset.id]) cb.checked = true;
+  });
+  updateProgressBar();
 }
 
-async function saveProgress(checkbox) {
-  const { data: { session } } = await supabaseClient.auth.getSession();
-  const user = session?.user;
-  if (!user) return;
-
-  const row = {
-    user_id: user.id,
-    checkbox_id: Number(checkbox.dataset.id),
-    checked: checkbox.checked
-  };
-
-  const { error } = await supabaseClient.from('progress').upsert(row);
-  if (error) {
-    console.error('Falha ao salvar progresso', error);
-  }
+function saveProgress(checkbox) {
+  const email = localStorage.getItem('loggedInUser');
+  if (!email) return;
+  const data = JSON.parse(localStorage.getItem(`progress-${email}`) || '{}');
+  data[checkbox.dataset.id] = checkbox.checked;
+  localStorage.setItem(`progress-${email}`, JSON.stringify(data));
 }
 
 document.addEventListener('DOMContentLoaded', init);
