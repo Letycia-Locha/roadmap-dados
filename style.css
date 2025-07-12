@@ -33,11 +33,12 @@ header .subtitle {
 }
 
 #progress-container {
-  width: 100%;
+  width: 90%;
+  max-width: 960px;
   background-color: #000;
   border-radius: 8px;
   overflow: hidden;
-  margin: 1rem 0;
+  margin: 1rem auto;
 }
 
 #auth {
