@@ -5,6 +5,8 @@ function init() {
     checkboxes: document.querySelectorAll('tbody input[type="checkbox"]'),
     progressBar: document.getElementById('progress-bar'),
     progressText: document.getElementById('progress-text'),
+    progressContainer: document.getElementById('progress-container'),
+    menu: document.querySelector('nav .menu'),
     loginForm: document.getElementById('login-form'),
     logoutBtn: document.getElementById('logout-btn'),
     authMessage: document.getElementById('auth-message'),
@@ -15,6 +17,9 @@ function init() {
     if (!cb.dataset.id) cb.dataset.id = idx + 1;
     cb.addEventListener('change', () => handleCheckboxChange(cb));
   });
+
+  matchMenuWidth();
+  window.addEventListener('resize', matchMenuWidth);
 
   elements.loginForm.addEventListener('submit', handleLogin);
   elements.logoutBtn.addEventListener('click', handleLogout);
@@ -89,6 +94,11 @@ function saveProgress(checkbox) {
   const data = JSON.parse(localStorage.getItem(`progress-${email}`) || '{}');
   data[checkbox.dataset.id] = checkbox.checked;
   localStorage.setItem(`progress-${email}`, JSON.stringify(data));
+}
+
+function matchMenuWidth() {
+  const width = elements.menu.getBoundingClientRect().width;
+  elements.progressContainer.style.width = `${width}px`;
 }
 
 document.addEventListener('DOMContentLoaded', init);
